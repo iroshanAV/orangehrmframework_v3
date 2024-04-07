@@ -22,6 +22,7 @@ public class LoginPageTests extends BaseClass {
 
     @Test(priority = 0)
     public void checkLoginSuccessful() {
+        System.out.println("Start of the test case 1");
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
         loginPage.enterUsername("Admin");
@@ -29,10 +30,12 @@ public class LoginPageTests extends BaseClass {
         loginPage.clickSubmitBtn();
 
         Assert.assertTrue(dashboardPage.isUserLoggedIn(), "User managed to logged in successfully");
+        System.out.println("End of the test case 1");
     }
 
     @Test(priority = 1)
     public void checkLoginUnsuccessful() {
+        System.out.println("Start of the test case 2");
         loginPage = new LoginPage(driver);
         loginPage.enterUsername("Admin");
         loginPage.enterPassword("admin1234");
@@ -40,7 +43,7 @@ public class LoginPageTests extends BaseClass {
         String expectedText = "Invalid credentials";
 
         Assert.assertEquals(loginPage.locateInvalidLoginText(), expectedText, "User logged in no errors occurred");
-
+        System.out.println("End of the test case 2");
     }
 
     @AfterMethod
