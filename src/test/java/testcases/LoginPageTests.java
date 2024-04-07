@@ -25,7 +25,7 @@ public class LoginPageTests extends BaseClass {
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
         loginPage.enterUsername("Admin");
-        loginPage.enterPassword("admin12");
+        loginPage.enterPassword("admin123");
         loginPage.clickSubmitBtn();
 
         Assert.assertTrue(dashboardPage.isUserLoggedIn(), "User managed to logged in successfully");
