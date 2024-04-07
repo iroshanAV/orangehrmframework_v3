@@ -1,5 +1,6 @@
 package testcases;
 
+import common.Constants;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -25,8 +26,8 @@ public class LoginPageTests extends BaseClass {
         System.out.println("Start of the test case 1");
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
-        loginPage.enterUsername("Admin");
-        loginPage.enterPassword("admin123");
+        loginPage.enterUsername(Constants.USERNAME);
+        loginPage.enterPassword(Constants.PASSWORD);
         loginPage.clickSubmitBtn();
 
         Assert.assertTrue(dashboardPage.isUserLoggedIn(), "User managed to logged in successfully");
@@ -37,8 +38,8 @@ public class LoginPageTests extends BaseClass {
     public void checkLoginUnsuccessful() {
         System.out.println("Start of the test case 2");
         loginPage = new LoginPage(driver);
-        loginPage.enterUsername("Admin");
-        loginPage.enterPassword("admin1234");
+        loginPage.enterUsername(Constants.USERNAME);
+        loginPage.enterPassword(Constants.INVALID_PASSWORD);
         loginPage.clickSubmitBtn();
         String expectedText = "Invalid credentials";
 
