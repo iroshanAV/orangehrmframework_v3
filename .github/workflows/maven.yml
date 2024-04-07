@@ -30,3 +30,5 @@ jobs:
         cache: maven
     - name: Run the tests
       run: mvn clean install -DXmlFile=testng.xml
+    - name: archive artifact
+      uses: actions/upload-artifact@v3
