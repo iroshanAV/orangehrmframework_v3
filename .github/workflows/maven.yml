@@ -33,4 +33,4 @@ jobs:
     - name: archive artifact
       uses: actions/upload-artifact@v3
       with:
-      path: ./reports/
+      path: ./target/
