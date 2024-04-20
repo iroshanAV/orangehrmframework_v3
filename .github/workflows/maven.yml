@@ -45,4 +45,4 @@ jobs:
           aws_bucket: ${{ secrets.AWS_BUCKET }}
           source_dir: './target/surefire-reports'
       - name: Link to report
-        run: echo "https://automation-daily-results.s3.eu-north-1.amazonaws.com/index.html"
+        run: echo "https://automation-daily-results.s3.eu-north-1.amazonaws.com/${{steps.S3.outputs.object_key}}/index.html"
