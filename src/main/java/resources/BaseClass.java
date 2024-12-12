@@ -6,11 +6,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.PageManager;
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseClass {
     WebDriver driver;
+    protected PageManager pageManager;
+
     String url = "https://opensource-demo.orangehrmlive.com/web/auth/login";
 
     public WebDriver initializeDriver() {
